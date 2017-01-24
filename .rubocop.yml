@@ -1,0 +1,3 @@
+inherit_from:
+  - '.ruby-style.yml'
+  - '.rubocop_todo.yml'
