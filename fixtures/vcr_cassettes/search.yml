@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://ktu.onlineservice.creditreform.de/webservice/0600-0021/soap12/messages.wsdl
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0"?>
+        <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ns="https://onlineservice.creditreform.de/webservice/0600-0021">
+          <soap:Header/>
+          <soap:Body>
+            <ns:searchRequest>
+              <ns:header>
+                <ns:communicationlanguage>de</ns:communicationlanguage>
+                <ns:transmissiontimestamp>2017-01-26T17:21:02+01:00</ns:transmissiontimestamp>
+                <ns:keylistversion>21</ns:keylistversion>
+                <ns:clientapplicationname>Crefo Ruby Client</ns:clientapplicationname>
+                <ns:clientapplicationversion>0</ns:clientapplicationversion>
+                <ns:transactionreference>de5e81bef7d2f81f412a1ab17</ns:transactionreference>
+                <ns:useraccount><CREFO_USERACCOUNT></ns:useraccount>
+                <ns:generalpassword><CREFO_GENERALPASSWORD></ns:generalpassword>
+                <ns:individualpassword><CREFO_INDIVIDUALPASSWORD></ns:individualpassword>
+              </ns:header>
+              <ns:body>
+                <ns:searchtype>SETY-1</ns:searchtype>
+                <ns:companyname>BE - Testcompany1</ns:companyname>
+                <ns:postcode>8531</ns:postcode>
+                <ns:city>Harelbeke</ns:city>
+                <ns:country>BE</ns:country>
+              </ns:body>
+            </ns:searchRequest>
+          </soap:Body>
+        </soap:Envelope>
+    headers:
+      User-Agent:
+      - Crefo Ruby Client v0
+      Content-Type:
+      - application/xop+xml
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      connection:
+      - close
+      date:
+      - Thu, 26 Jan 2017 16:21:02 GMT
+      transfer-encoding:
+      - chunked
+      content-type:
+      - Multipart/Related; boundary="----=_Part_475610_1148391763.1485447662893";
+        type="application/xop+xml"; start-info="application/soap+xml"
+      accept:
+      - application/soap+xml, text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
+      soapaction:
+      - '""'
+      access-control-allow-headers:
+      - Content-Type
+      access-control-allow-methods:
+      - GET, POST, OPTIONS
+      access-control-allow-origin:
+      - "*"
+    body:
+      encoding: UTF-8
+      string: "------=_Part_475610_1148391763.1485447662893\r\nContent-Type: application/xop+xml;
+        charset=utf-8; type=\"application/soap+xml\"\r\n\r\n<env:Envelope xmlns:env=\"http://www.w3.org/2003/05/soap-envelope\"><env:Header/><env:Body><ns2:searchResponse
+        xmlns:ns2=\"https://onlineservice.creditreform.de/webservice/0600-0021\"><ns2:header><ns2:communicationlanguage>de</ns2:communicationlanguage><ns2:transmissiontimestamp>2017-01-26T17:21:02.862+01:00</ns2:transmissiontimestamp><ns2:keylistversion>21</ns2:keylistversion><ns2:clientapplicationname>Crefo
+        Ruby Client</ns2:clientapplicationname><ns2:clientapplicationversion>0</ns2:clientapplicationversion><ns2:transactionreference>de5e81bef7d2f81f412a1ab17</ns2:transactionreference><ns2:useraccount><CREFO_USERACCOUNT></ns2:useraccount><ns2:responseid>3cd90ed3-eb0d-4c67-be87-218e5034c15d</ns2:responseid></ns2:header><ns2:body><ns2:hit><ns2:identificationnumber>10280123456789</ns2:identificationnumber><ns2:companyname>BE
+        - TestCompany1</ns2:companyname><ns2:street>RINGLAAN 18</ns2:street><ns2:postcode>8531</ns2:postcode><ns2:city>HARELBEKE</ns2:city><ns2:country><ns2:key>BE</ns2:key><ns2:designation>Belgien</ns2:designation></ns2:country></ns2:hit><ns2:morehits>false</ns2:morehits></ns2:body></ns2:searchResponse></env:Body></env:Envelope>\r\n------=_Part_475610_1148391763.1485447662893--"
+    http_version: 
+  recorded_at: Thu, 26 Jan 2017 16:21:02 GMT
+recorded_with: VCR 3.0.3
