@@ -1,6 +1,6 @@
 module Crefo
-  class Request
-    module XML
+  module XML
+    class Request
       class Header
         class << self
           def build(xml, request)

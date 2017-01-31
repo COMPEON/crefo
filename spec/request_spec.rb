@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe Crefo::Request::Search, vcr: :search do
+describe Crefo::Service::Search::Request, vcr: :search do
   describe 'generate_request_id' do
     it 'creates a uniq id' do
-      expect(Crefo::Request.new.__send__(:generate_request_id)).not_to eq Crefo::Request.new.__send__(:generate_request_id)
+      expect(described_class.new.__send__(:generate_request_id)).not_to eq described_class.new.__send__(:generate_request_id)
     end
 
     it 'creates a 25 char id' do
@@ -13,12 +13,12 @@ describe Crefo::Request::Search, vcr: :search do
 
   describe '#send' do
     it 'sends the request to Crefo and returns the responce' do
-      expect(subject.send).to be_a_instance_of Crefo::Response::Search
+      expect(subject.send).to be_a_instance_of Crefo::Service::Search::Response
     end
   end
 
-  describe Crefo::Response do
-    subject { Crefo::Request::Search.new.send }
+  describe Crefo::Service::Response do
+    subject { Crefo::Service::Search::Request.new.send }
 
     describe '#body' do
       it 'returns the striped body' do
@@ -29,7 +29,7 @@ describe Crefo::Request::Search, vcr: :search do
 
     describe '#result' do
       it 'returns the raw data' do
-        company = Crefo::Response::Search::Company.new "10280123456789", "BE - TestCompany1", "RINGLAAN 18", "8531", "HARELBEKE", "Belgien"
+        company = Crefo::Service::Search::Response::Company.new "10280123456789", "BE - TestCompany1", "RINGLAAN 18", "8531", "HARELBEKE", "Belgien"
         expect(subject.result).to eq [company]
       end
     end

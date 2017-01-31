@@ -1,6 +1,6 @@
 module Crefo
-  class Request
-    module XML
+  module XML
+    class Request
       class Envelope
         attr_reader :request
 
@@ -10,12 +10,12 @@ module Crefo
 
         def build
           builder = Nokogiri::XML::Builder.new
-          builder['soap'].Envelope(XML::NAMESPACES) do |envelope|
+          builder['soap'].Envelope(XML::Request::NAMESPACES) do |envelope|
             envelope.Header
             envelope.Body do |body|
               body['ns'].send("#{request.class.request_name}Request") do |xml|
-                XML::Header.build(xml, request)
-                XML::Body.build(xml, request.body)
+                XML::Request::Header.build(xml, request)
+                XML::Request::Body.build(xml, request.body)
               end
             end
           end
