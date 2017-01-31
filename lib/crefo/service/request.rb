@@ -23,7 +23,7 @@ module Crefo
         @connection ||= begin
           options = Crefo.config.connection_options
           Faraday.new(options) do |connection|
-            connection.headers[:user_agent] = "#{Crefo.config.clientapplicationname} v#{Crefo.config.clientapplicationversion}"
+            connection.headers[:user_agent] = user_agent
             connection.request :multipart
             connection.adapter :net_http
           end
@@ -31,6 +31,10 @@ module Crefo
       end
 
       private
+
+      def user_agent
+        "#{Crefo.config.clientapplicationname} v#{Crefo.config.clientapplicationversion}"
+      end
 
       def generate_request_id
         SecureRandom.hex[0, 25]

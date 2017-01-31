@@ -26,7 +26,7 @@ module Crefo
 
     module Builder
       def configure(&block)
-        config.tap &block
+        config.tap(&block)
       end
 
       def config

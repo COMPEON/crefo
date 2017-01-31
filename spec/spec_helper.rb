@@ -49,10 +49,10 @@ RSpec.configure do |config|
   end
 
   config.around(:each, :mock_config) do |example|
-    Crefo.mock_config! do |config|
-      config.useraccount = 'mocked_useraccount'
-      config.generalpassword = 'mocked_generalpassword'
-      config.individualpassword = 'mocked_individualpassword'
+    Crefo.mock_config! do |mock|
+      mock.useraccount = 'mocked_useraccount'
+      mock.generalpassword = 'mocked_generalpassword'
+      mock.individualpassword = 'mocked_individualpassword'
     end
     example.run
     Crefo.unmock_config!

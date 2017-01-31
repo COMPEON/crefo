@@ -10,7 +10,7 @@ describe Crefo::XML::Utils::HashToNodes do
   end
 
   it 'builds the request body' do
-    Crefo::XML::Utils::HashToNodes.(xml, :wrapper, nodes)
+    Crefo::XML::Utils::HashToNodes.call(xml, :wrapper, nodes)
 
     document = xml.to_xml
 
