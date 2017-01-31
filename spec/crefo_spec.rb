@@ -6,7 +6,7 @@ describe Crefo do
   end
 
   it 'is extended by Configuration::Builder' do
-  	expect(Crefo).to respond_to :configure
-  	expect(Crefo).to respond_to :config
+    expect(Crefo).to respond_to :configure
+    expect(Crefo).to respond_to :config
   end
 end

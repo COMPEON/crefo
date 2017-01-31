@@ -8,9 +8,9 @@ module Crefo
       def body
         @body ||= begin
           @response.body
-            .gsub(/^-+=_Part_.+$/, '')
-            .gsub(/^Content-Type:.+$/, '')
-            .strip
+                   .gsub(/^-+=_Part_.+$/, '')
+                   .gsub(/^Content-Type:.+$/, '')
+                   .strip
         end
       end
 

@@ -16,7 +16,7 @@ module Crefo
               individualpassword: Crefo.config.individualpassword
             }
 
-            Utils::HashToNodes.(xml, :header, nodes)
+            Utils::HashToNodes.call(xml, :header, nodes)
           end
         end
       end

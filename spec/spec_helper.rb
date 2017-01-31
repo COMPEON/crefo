@@ -10,7 +10,7 @@ Crefo.configure do |config|
   config.useraccount = ENV['CREFO_USERACCOUNT']
   config.generalpassword = ENV['CREFO_GENERALPASSWORD']
   config.individualpassword = ENV['CREFO_INDIVIDUALPASSWORD']
-  config.transactionreference = "de5e81bef7d2f81f412a1ab17"
+  config.transactionreference = 'de5e81bef7d2f81f412a1ab17'
   config.endpoint = :test
   config.connection_options = {
     # proxy: 'http://localhost:8080',

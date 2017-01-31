@@ -44,7 +44,7 @@ describe Crefo::Configuration do
       expect(config.useraccount).to eq 'user123'
       expect(config.generalpassword).to eq '123456'
       expect(config.individualpassword).to eq '7890'
-      expect(config.connection_options).to eq({ some: :options })
+      expect(config.connection_options).to eq(some: :options)
     end
   end
 end

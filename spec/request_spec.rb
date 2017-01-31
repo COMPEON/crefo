@@ -29,7 +29,7 @@ describe Crefo::Service::Search::Request, vcr: :search do
 
     describe '#result' do
       it 'returns the raw data' do
-        company = Crefo::Service::Search::Response::Company.new "10280123456789", "BE - TestCompany1", "RINGLAAN 18", "8531", "HARELBEKE", "Belgien"
+        company = Crefo::Service::Search::Response::Company.new '10280123456789', 'BE - TestCompany1', 'RINGLAAN 18', '8531', 'HARELBEKE', 'Belgien'
         expect(subject.result).to eq [company]
       end
     end

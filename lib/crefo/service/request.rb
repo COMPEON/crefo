@@ -37,21 +37,8 @@ module Crefo
       end
 
       class << self
-        def response_class
-          @response_class
-        end
-
-        def response_class=(response_class)
-          @response_class = response_class
-        end
-
-        def request_name
-          @request_name
-        end
-
-        def request_name=(request_name)
-          @request_name = request_name
-        end
+        attr_accessor :response_class
+        attr_accessor :request_name
       end
     end
   end
