@@ -10,7 +10,6 @@ module Crefo
     attr_accessor :clientapplicationname, :clientapplicationversion
     attr_accessor :useraccount, :generalpassword, :individualpassword, :connection_options
     attr_writer :endpoint
-    attr_reader :context
 
     def initialize
       @keylistversion = CURRENT_KEYLISTVERSION
@@ -31,7 +30,18 @@ module Crefo
       end
 
       def config
-        @@configuration ||= Crefo::Configuration.new
+        @configuration ||= Crefo::Configuration.new
+      end
+
+      module TestHelper
+        def mock_config!(&block)
+          @old_configuration = @configuration
+          @configuration = @configuration.dup.tap(&block)
+        end
+
+        def unmock_config!
+          @configuration = @old_configuration
+        end
       end
     end
   end

@@ -1,6 +1,3 @@
-require 'nokogiri'
-require 'faraday'
-
 module Crefo
   class Service
     class Request
@@ -24,9 +21,7 @@ module Crefo
 
       def connection
         @connection ||= begin
-          options = Crefo.config.connection_options.merge(
-          {}
-          )
+          options = Crefo.config.connection_options
           Faraday.new(options) do |connection|
             connection.headers[:user_agent] = "#{Crefo.config.clientapplicationname} v#{Crefo.config.clientapplicationversion}"
             connection.request :multipart
@@ -43,19 +38,19 @@ module Crefo
 
       class << self
         def response_class
-          @@response_class
+          @response_class
         end
 
         def response_class=(response_class)
-          @@response_class = response_class
+          @response_class = response_class
         end
 
         def request_name
-          @@request_name
+          @request_name
         end
 
         def request_name=(request_name)
-          @@request_name = request_name
+          @request_name = request_name
         end
       end
     end

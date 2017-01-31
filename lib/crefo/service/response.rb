@@ -1,5 +1,3 @@
-require "nori"
-
 module Crefo
   class Service
     class Response

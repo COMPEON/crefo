@@ -4,7 +4,7 @@ module Crefo
       class Body
         class << self
           def build(xml, nodes)
-            HashToNodes.(xml, :body, nodes)
+            Utils::HashToNodes.(xml, :body, nodes)
           end
         end
       end

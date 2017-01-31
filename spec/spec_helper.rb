@@ -18,6 +18,8 @@ Crefo.configure do |config|
   }
 end
 
+Crefo.extend Crefo::Configuration::Builder::TestHelper
+
 VCR.configure do |config|
   config.allow_http_connections_when_no_cassette = true
   config.cassette_library_dir = 'fixtures/vcr_cassettes'
@@ -28,11 +30,31 @@ VCR.configure do |config|
 end
 
 RSpec.configure do |config|
+  config.filter_run :focus unless ENV['CI']
+  config.filter_run_excluding :skip unless ENV['CI']
+  config.run_all_when_everything_filtered = true
+
   config.around(:each, :vcr) do |example|
     VCR.use_cassette example.metadata[:vcr], match_requests_on: [:body, :headers] do |cassette|
       Timecop.freeze(cassette.originally_recorded_at || Time.now) do
         example.run
       end
     end
+  end
+
+  config.around(:each, :timecop) do |example|
+    Timecop.freeze(Time.now) do
+      example.run
+    end
+  end
+
+  config.around(:each, :mock_config) do |example|
+    Crefo.mock_config! do |config|
+      config.useraccount = 'mocked_useraccount'
+      config.generalpassword = 'mocked_generalpassword'
+      config.individualpassword = 'mocked_individualpassword'
+    end
+    example.run
+    Crefo.unmock_config!
   end
 end

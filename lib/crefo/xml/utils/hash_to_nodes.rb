@@ -1,6 +1,6 @@
 module Crefo
   module XML
-    class Request
+    class Utils
       module HashToNodes
         def call(xml_builder, wrapper_node, nodes)
           xml_builder.__send__ wrapper_node do |parent_node|
