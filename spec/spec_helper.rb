@@ -36,14 +36,14 @@ RSpec.configure do |config|
 
   config.around(:each, :vcr) do |example|
     VCR.use_cassette example.metadata[:vcr], match_requests_on: [:body, :headers] do |cassette|
-      Timecop.freeze(cassette.originally_recorded_at || Time.now) do
+      Timecop.freeze(Crefo.test_time) do
         example.run
       end
     end
   end
 
   config.around(:each, :timecop) do |example|
-    Timecop.freeze(Time.now) do
+    Timecop.freeze(Crefo.test_time) do
       example.run
     end
   end

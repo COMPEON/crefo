@@ -42,6 +42,10 @@ module Crefo
         def unmock_config!
           @configuration = @old_configuration
         end
+
+        def test_time
+          Time.new(2014, 12, 20, 4, 44, 44)
+        end
       end
     end
   end
