@@ -18,6 +18,8 @@ describe Crefo::Configuration do
       end
     end
 
+    let(:config) { subject.config }
+
     before(:each) do
       subject.configure do |config|
         config.endpoint = :test
@@ -33,8 +35,7 @@ describe Crefo::Configuration do
       end
     end
 
-    it '' do
-      config = subject.config
+    it 'stores all configured data' do
       expect(config.endpoint).to eq 'https://ktu.onlineservice.creditreform.de:443/webservice/0600-0021/soap12/messages.wsdl'
       expect(config.communicationlanguage).to eq 'en'
       expect(config.keylistversion).to eq 22
@@ -45,6 +46,24 @@ describe Crefo::Configuration do
       expect(config.generalpassword).to eq '123456'
       expect(config.individualpassword).to eq '7890'
       expect(config.connection_options).to eq(some: :options)
+    end
+
+    [
+      [:default, 'https://onlineservice.creditreform.de:443/webservice/0600-0021/soap12/messages.wsdl'],
+      [:test, 'https://ktu.onlineservice.creditreform.de:443/webservice/0600-0021/soap12/messages.wsdl'],
+      ['http://example.com/foo.wdsl', 'http://example.com/foo.wdsl']
+    ].each do |key, url|
+      context "with #{key} endpoint" do
+        before(:each) do
+          subject.configure do |config|
+            config.endpoint = key
+          end
+        end
+
+        it "resolves the endpoint to #{url}" do
+          expect(config.endpoint).to eq url
+        end
+      end
     end
   end
 end
