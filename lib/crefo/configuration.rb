@@ -44,7 +44,7 @@ module Crefo
         end
 
         def test_time
-          Time.new(2014, 12, 20, 4, 44, 44)
+          Time.new(2014, 12, 20, 4, 44, 44, "+01:00")
         end
       end
     end
