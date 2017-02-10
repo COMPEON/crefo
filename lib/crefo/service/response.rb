@@ -1,16 +1,15 @@
 module Crefo
   class Service
     class Response
-      def initialize(response)
-        @response = response
+      def initialize(response_body)
+        @response_body = response_body
       end
 
       def body
         @body ||= begin
-          @response.body
-                   .gsub(/^-+=_Part_.+$/, '')
-                   .gsub(/^Content-Type:.+$/, '')
-                   .strip
+          @response_body.gsub(/^-+=_Part_.+$/, '')
+                        .gsub(/^Content-Type:.+$/, '')
+                        .strip
         end
       end
 
@@ -35,11 +34,11 @@ module Crefo
 
       class << self
         def response_name
-          @@response_name
+          @response_name
         end
 
         def response_name=(response_name)
-          @@response_name = response_name
+          @response_name = response_name
         end
       end
     end

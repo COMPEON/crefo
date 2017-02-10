@@ -16,7 +16,7 @@ module Crefo
           reqest.headers[:content_type] = 'application/xop+xml'
           reqest.body = envelope
         end
-        self.class.response_class.new response
+        self.class.response_class.new response.body
       end
 
       def connection
