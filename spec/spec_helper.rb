@@ -22,7 +22,7 @@ Crefo.extend Crefo::Configuration::Builder::TestHelper
 
 VCR.configure do |config|
   config.allow_http_connections_when_no_cassette = true
-  config.cassette_library_dir = 'fixtures/vcr_cassettes'
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   config.hook_into :faraday
   config.filter_sensitive_data('<CREFO_USERACCOUNT>') { Crefo.config.useraccount }
   config.filter_sensitive_data('<CREFO_GENERALPASSWORD>') { Crefo.config.generalpassword }
@@ -31,7 +31,7 @@ end
 
 module FixturesTools
   def fixtures_xml(file)
-    File.read("spec/fixtures/#{file}.xml")
+    File.read("spec/fixtures/xmls/#{file}.xml")
   end
 end
 
