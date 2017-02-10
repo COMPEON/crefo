@@ -4,6 +4,10 @@ require 'timecop'
 require 'dotenv'
 require 'vcr'
 
+Dir['spec/support/*'].each do |file|
+  require "#{Dir.pwd}/#{file}"
+end
+
 Dotenv.load
 
 Crefo.configure do |config|
@@ -27,12 +31,6 @@ VCR.configure do |config|
   config.filter_sensitive_data('<CREFO_USERACCOUNT>') { Crefo.config.useraccount }
   config.filter_sensitive_data('<CREFO_GENERALPASSWORD>') { Crefo.config.generalpassword }
   config.filter_sensitive_data('<CREFO_INDIVIDUALPASSWORD>') { Crefo.config.individualpassword }
-end
-
-module FixturesTools
-  def fixtures_xml(file)
-    File.read("spec/fixtures/xmls/#{file}.xml")
-  end
 end
 
 RSpec.configure do |config|

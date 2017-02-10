@@ -1,17 +1,6 @@
 require 'spec_helper'
 
 describe Crefo::XML::Request::Envelope do
-  class TestRequest < Crefo::Service::Request
-    self.request_name = :test
-
-    def body
-      {
-        foo: 'bar',
-        bar: 'foo'
-      }
-    end
-  end
-
   let(:xml) { Nokogiri::XML::Builder.new }
   let(:request) { TestRequest.new }
   let(:time) { Time.now.iso8601 }
