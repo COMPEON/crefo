@@ -40,7 +40,7 @@ describe Crefo::Service::Search::Request, vcr: :search do
   describe '#xml' do
     xit 'xml' do
       # allow(subject).to receive(:request_id).and_return("de5e81bef7d2f81f412a1ab17")
-      expect(subject.envelope).to eq <<~XML
+      expect(subject.envelope).to eq <<-XML
         <?xml version="1.0"?>
         <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ns="https://onlineservice.creditreform.de/webservice/0600-0021">
           <soap:Header/>
