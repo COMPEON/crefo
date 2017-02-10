@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Crefo::XML::Request::Envelope do
   let(:xml) { Nokogiri::XML::Builder.new }
-  let(:request) { TestRequest.new }
+  let(:request) { TestService::Request.new }
   let(:time) { Time.now.iso8601 }
 
   it 'builds the request header', :timecop, :mock_config do

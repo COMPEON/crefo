@@ -1,6 +1,6 @@
 module Crefo
   class Service
-    class ChangePassword
+    class ChangePassword < Crefo::Service
       class Response < Service::Response
         self.response_name = :changepassword
 

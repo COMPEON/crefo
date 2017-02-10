@@ -1,10 +1,11 @@
 module Crefo
   class Service
     class Request
-      attr_reader :request_id
+      attr_reader :request_id, :options
 
-      def initialize(request_id: nil)
+      def initialize(request_id: nil, **options)
         @request_id = request_id || Crefo.config.transactionreference || generate_request_id
+        @options = options
       end
 
       def envelope
@@ -12,11 +13,10 @@ module Crefo
       end
 
       def send
-        response = connection.post Crefo.config.endpoint do |reqest|
+        connection.post Crefo.config.endpoint do |reqest|
           reqest.headers[:content_type] = 'application/xop+xml'
           reqest.body = envelope
-        end
-        self.class.response_class.new response.body
+        end.body
       end
 
       def connection

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Crefo::Service::Request do
-  subject { TestRequest.new }
+  subject { TestService::Request.new }
 
   describe 'generate_request_id' do
     it 'creates a uniq id' do
@@ -16,14 +16,13 @@ describe Crefo::Service::Request do
   end
 
   describe '#send' do
-    let(:response) { double(:response_xml, body: response_xml) }
+    let(:response) { double(:response) }
     let(:response_xml) { double(:response_xml) }
-    let(:response_object) { double(:response_object) }
 
-    it 'sends the request to Crefo and returns the responce' do
+    it 'sends the request to Crefo and returns the response' do
+      expect(response).to receive(:body).and_return(response_xml)
       expect(subject.connection).to receive(:post).and_return(response)
-      expect(TestResponse).to receive(:new).with(response_xml).and_return(response_object)
-      expect(subject.send).to eq response_object
+      expect(subject.send).to eq response_xml
     end
   end
 

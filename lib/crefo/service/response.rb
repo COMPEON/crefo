@@ -1,7 +1,9 @@
 module Crefo
   class Service
     class Response
-      def initialize(response_body)
+      attr_accessor :response_body
+
+      def initialize(response_body = nil)
         @response_body = response_body
       end
 

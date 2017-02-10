@@ -42,6 +42,7 @@ RSpec.configure do |config|
   config.include FixturesTools
 
   config.around(:each, :vcr) do |example|
+    VCR.eject_cassette # TODO: fix this hack
     VCR.use_cassette example.metadata[:vcr], match_requests_on: [:body, :headers] do |cassette|
       Timecop.freeze(Crefo.test_time) do
         example.run

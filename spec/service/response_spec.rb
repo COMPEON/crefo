@@ -3,7 +3,7 @@ require 'spec_helper'
   describe Crefo::Service::Response do
     let(:response_body) { fixtures_xml('request_envelope', strip_xml_header: true) }
 
-    subject { TestResponse.new(response_body) }
+    subject { TestService::Response.new(response_body) }
 
     describe '#body' do
       it 'returns the striped body' do
