@@ -6,14 +6,14 @@ module Crefo
 
         def result
           hits.map do |hit|
-            company = Company.new
-            company.identificationnumber = hit[:identificationnumber]
-            company.companyname = hit[:companyname]
-            company.street = hit[:street]
-            company.zipcode = hit[:postcode]
-            company.city = hit[:city]
-            company.country = hit[:country][:designation]
-            company
+            Company.new.tap do |company|
+              company.identificationnumber = hit[:identificationnumber]
+              company.companyname = hit[:companyname]
+              company.street = hit[:street]
+              company.zipcode = hit[:postcode]
+              company.city = hit[:city]
+              company.country = hit[:country][:designation]
+             end
           end
         end
 
