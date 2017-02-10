@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Crefo::Service::ChangePassword::Request, vcr: :change_password do
+describe Crefo::Service::ChangePassword::Request, vcr: :changepassword do
   describe '#send' do
     it 'sends the request' do
       expect(subject.send).to be_truthy
