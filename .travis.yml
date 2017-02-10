@@ -8,3 +8,5 @@ rvm:
   - 2.4.0
 before_install: gem install bundler -v 1.14.3
 before_script: cp .env.sample .env
+notifications:
+  email: false
