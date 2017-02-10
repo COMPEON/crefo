@@ -3,6 +3,7 @@ require 'crefo'
 require 'timecop'
 require 'dotenv'
 require 'vcr'
+require 'pry'
 
 Dir['spec/support/*'].each do |file|
   require "#{Dir.pwd}/#{file}"
