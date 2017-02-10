@@ -29,10 +29,18 @@ VCR.configure do |config|
   config.filter_sensitive_data('<CREFO_INDIVIDUALPASSWORD>') { Crefo.config.individualpassword }
 end
 
+module FixturesTools
+  def fixtures_xml(file)
+    File.read("spec/fixtures/#{file}.xml")
+  end
+end
+
 RSpec.configure do |config|
   config.filter_run :focus unless ENV['CI']
   config.filter_run_excluding :skip unless ENV['CI']
   config.run_all_when_everything_filtered = true
+
+  config.include FixturesTools
 
   config.around(:each, :vcr) do |example|
     VCR.use_cassette example.metadata[:vcr], match_requests_on: [:body, :headers] do |cassette|

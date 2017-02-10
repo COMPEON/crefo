@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Crefo::XML::Request::Header do
+describe Crefo::XML::Request::Body do
   let(:xml) { Nokogiri::XML::Builder.new }
   let(:nodes) do
     {
@@ -14,12 +14,6 @@ describe Crefo::XML::Request::Header do
 
     document = xml.to_xml
 
-    expect(document).to eq <<~XML
-      <?xml version="1.0"?>
-      <body>
-        <foo>bar</foo>
-        <bar>foo</bar>
-      </body>
-    XML
+    expect(document).to eq fixtures_xml('request-body')
   end
 end

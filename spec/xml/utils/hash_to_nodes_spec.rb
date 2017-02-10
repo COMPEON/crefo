@@ -14,12 +14,6 @@ describe Crefo::XML::Utils::HashToNodes do
 
     document = xml.to_xml
 
-    expect(document).to eq <<~XML
-      <?xml version="1.0"?>
-      <wrapper>
-        <foo>bar</foo>
-        <bar>foo</bar>
-      </wrapper>
-    XML
+    expect(document).to eq fixtures_xml('hash_to_nodes')
   end
 end

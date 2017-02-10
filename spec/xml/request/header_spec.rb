@@ -10,19 +10,6 @@ describe Crefo::XML::Request::Header do
 
     document = xml.to_xml
 
-    expect(document).to eq <<~XML
-      <?xml version="1.0"?>
-      <header>
-        <communicationlanguage>de</communicationlanguage>
-        <transmissiontimestamp>#{time}</transmissiontimestamp>
-        <keylistversion>21</keylistversion>
-        <clientapplicationname>Crefo Ruby Client</clientapplicationname>
-        <clientapplicationversion>0</clientapplicationversion>
-        <transactionreference>asdfghjkl</transactionreference>
-        <useraccount>mocked_useraccount</useraccount>
-        <generalpassword>mocked_generalpassword</generalpassword>
-        <individualpassword>mocked_individualpassword</individualpassword>
-      </header>
-    XML
+    expect(document).to eq fixtures_xml('request_header')
   end
 end
