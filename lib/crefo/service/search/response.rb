@@ -29,8 +29,6 @@ module Crefo
             end
           end
         end
-
-        class Company < Struct.new(:identificationnumber, :companyname, :street, :zipcode, :city, :country); end
       end
     end
   end
