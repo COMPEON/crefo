@@ -12,6 +12,7 @@ end
 Dotenv.load
 
 Crefo.configure do |config|
+  config.clientapplicationname = ENV['CREFO_CLIENTAPPLICATIONNAME']
   config.useraccount = ENV['CREFO_USERACCOUNT']
   config.generalpassword = ENV['CREFO_GENERALPASSWORD']
   config.individualpassword = ENV['CREFO_INDIVIDUALPASSWORD']
@@ -29,6 +30,7 @@ VCR.configure do |config|
   config.allow_http_connections_when_no_cassette = true
   config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   config.hook_into :faraday
+  config.filter_sensitive_data('{CREFO_CLIENTAPPLICATIONNAME}') { Crefo.config.clientapplicationname }
   config.filter_sensitive_data('{CREFO_USERACCOUNT}') { Crefo.config.useraccount }
   config.filter_sensitive_data('{CREFO_GENERALPASSWORD}') { Crefo.config.generalpassword }
   config.filter_sensitive_data('{CREFO_INDIVIDUALPASSWORD}') { Crefo.config.individualpassword }
@@ -58,6 +60,7 @@ RSpec.configure do |config|
 
   config.around(:each, :mock_config) do |example|
     Crefo.mock_config! do |mock|
+      mock.clientapplicationname = 'mocked_clientapplicationname'
       mock.useraccount = 'mocked_useraccount'
       mock.generalpassword = 'mocked_generalpassword'
       mock.individualpassword = 'mocked_individualpassword'

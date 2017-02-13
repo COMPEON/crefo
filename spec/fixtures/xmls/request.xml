@@ -7,7 +7,7 @@
         <ns:communicationlanguage>de</ns:communicationlanguage>
         <ns:transmissiontimestamp>2014-12-20T04:44:44+01:00</ns:transmissiontimestamp>
         <ns:keylistversion>21</ns:keylistversion>
-        <ns:clientapplicationname>Crefo Ruby Client</ns:clientapplicationname>
+        <ns:clientapplicationname>mocked_clientapplicationname</ns:clientapplicationname>
         <ns:clientapplicationversion>0</ns:clientapplicationversion>
         <ns:transactionreference>de5e81bef7d2f81f412a1ab17</ns:transactionreference>
         <ns:useraccount>mocked_useraccount</ns:useraccount>

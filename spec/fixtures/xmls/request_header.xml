@@ -3,7 +3,7 @@
   <communicationlanguage>de</communicationlanguage>
   <transmissiontimestamp>2014-12-20T04:44:44+01:00</transmissiontimestamp>
   <keylistversion>21</keylistversion>
-  <clientapplicationname>Crefo Ruby Client</clientapplicationname>
+  <clientapplicationname>mocked_clientapplicationname</clientapplicationname>
   <clientapplicationversion>0</clientapplicationversion>
   <transactionreference>asdfghjkl</transactionreference>
   <useraccount>mocked_useraccount</useraccount>

@@ -14,7 +14,6 @@ module Crefo
     def initialize
       @keylistversion = CURRENT_KEYLISTVERSION
       @communicationlanguage = 'de'
-      @clientapplicationname = 'Crefo Ruby Client'
       @clientapplicationversion = Crefo::VERSION.to_i
       @connection_options = {}
       @endpoint = :default

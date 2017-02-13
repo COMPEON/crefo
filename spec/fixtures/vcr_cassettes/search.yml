@@ -15,7 +15,7 @@ http_interactions:
                 <ns:communicationlanguage>de</ns:communicationlanguage>
                 <ns:transmissiontimestamp>2014-12-20T04:44:44+01:00</ns:transmissiontimestamp>
                 <ns:keylistversion>21</ns:keylistversion>
-                <ns:clientapplicationname>Crefo Ruby Client</ns:clientapplicationname>
+                <ns:clientapplicationname>{CREFO_CLIENTAPPLICATIONNAME}</ns:clientapplicationname>
                 <ns:clientapplicationversion>0</ns:clientapplicationversion>
                 <ns:transactionreference>de5e81bef7d2f81f412a1ab17</ns:transactionreference>
                 <ns:useraccount>{CREFO_USERACCOUNT}</ns:useraccount>
@@ -34,7 +34,7 @@ http_interactions:
         </soap:Envelope>
     headers:
       User-Agent:
-      - Crefo Ruby Client v0
+      - "{CREFO_CLIENTAPPLICATIONNAME} v0"
       Content-Type:
       - application/xop+xml
   response:
@@ -45,11 +45,11 @@ http_interactions:
       connection:
       - close
       date:
-      - Fri, 03 Feb 2017 08:58:21 GMT
+      - Mon, 13 Feb 2017 14:46:11 GMT
       transfer-encoding:
       - chunked
       content-type:
-      - Multipart/Related; boundary="----=_Part_542969_1055695211.1486112301671";
+      - Multipart/Related; boundary="----=_Part_663975_1699528041.1486997171737";
         type="application/xop+xml"; start-info="application/soap+xml"
       accept:
       - application/soap+xml, text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
@@ -63,11 +63,10 @@ http_interactions:
       - "*"
     body:
       encoding: ASCII-8BIT
-      string: "------=_Part_542969_1055695211.1486112301671\r\nContent-Type: application/xop+xml;
+      string: "------=_Part_663975_1699528041.1486997171737\r\nContent-Type: application/xop+xml;
         charset=utf-8; type=\"application/soap+xml\"\r\n\r\n<env:Envelope xmlns:env=\"http://www.w3.org/2003/05/soap-envelope\"><env:Header/><env:Body><ns2:searchResponse
-        xmlns:ns2=\"https://onlineservice.creditreform.de/webservice/0600-0021\"><ns2:header><ns2:communicationlanguage>de</ns2:communicationlanguage><ns2:transmissiontimestamp>2017-02-03T09:58:21.643+01:00</ns2:transmissiontimestamp><ns2:keylistversion>21</ns2:keylistversion><ns2:clientapplicationname>Crefo
-        Ruby Client</ns2:clientapplicationname><ns2:clientapplicationversion>0</ns2:clientapplicationversion><ns2:transactionreference>de5e81bef7d2f81f412a1ab17</ns2:transactionreference><ns2:useraccount>{CREFO_USERACCOUNT}</ns2:useraccount><ns2:responseid>22cd24eb-1d7b-40a1-96bb-1b2cf613eda5</ns2:responseid></ns2:header><ns2:body><ns2:hit><ns2:identificationnumber>10280123456789</ns2:identificationnumber><ns2:companyname>BE
-        - TestCompany1</ns2:companyname><ns2:street>RINGLAAN 18</ns2:street><ns2:postcode>8531</ns2:postcode><ns2:city>HARELBEKE</ns2:city><ns2:country><ns2:key>BE</ns2:key><ns2:designation>Belgien</ns2:designation></ns2:country></ns2:hit><ns2:morehits>false</ns2:morehits></ns2:body></ns2:searchResponse></env:Body></env:Envelope>\r\n------=_Part_542969_1055695211.1486112301671--"
+        xmlns:ns2=\"https://onlineservice.creditreform.de/webservice/0600-0021\"><ns2:header><ns2:communicationlanguage>de</ns2:communicationlanguage><ns2:transmissiontimestamp>2017-02-13T15:46:11.706+01:00</ns2:transmissiontimestamp><ns2:keylistversion>21</ns2:keylistversion><ns2:clientapplicationname>{CREFO_CLIENTAPPLICATIONNAME}</ns2:clientapplicationname><ns2:clientapplicationversion>0</ns2:clientapplicationversion><ns2:transactionreference>de5e81bef7d2f81f412a1ab17</ns2:transactionreference><ns2:useraccount>{CREFO_USERACCOUNT}</ns2:useraccount><ns2:responseid>05241f3a-24e9-4239-9258-5814c3f8a892</ns2:responseid></ns2:header><ns2:body><ns2:hit><ns2:identificationnumber>10280123456789</ns2:identificationnumber><ns2:companyname>BE
+        - TestCompany1</ns2:companyname><ns2:street>RINGLAAN 18</ns2:street><ns2:postcode>8531</ns2:postcode><ns2:city>HARELBEKE</ns2:city><ns2:country><ns2:key>BE</ns2:key><ns2:designation>Belgien</ns2:designation></ns2:country></ns2:hit><ns2:morehits>false</ns2:morehits></ns2:body></ns2:searchResponse></env:Body></env:Envelope>\r\n------=_Part_663975_1699528041.1486997171737--"
     http_version: 
   recorded_at: Sat, 20 Dec 2014 03:44:44 GMT
 recorded_with: VCR 3.0.3
