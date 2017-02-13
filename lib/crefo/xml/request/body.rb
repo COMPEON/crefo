@@ -4,7 +4,7 @@ module Crefo
       class Body
         class << self
           def build(xml, nodes)
-            Utils::HashToNodes.call(xml, :body, nodes)
+            Utils::HashToNodes.call(xml, :body, nodes) unless nodes.empty?
           end
         end
       end
