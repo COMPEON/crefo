@@ -6,6 +6,7 @@ module FixturesTools
   end
 
   def vcr_reponse_body(cassette_name)
+    VCR.eject_cassette # TODO: fix this hack
     cassette = VCR.insert_cassette(cassette_name)
     data = cassette.send(:deserialized_hash)
     data["http_interactions"][0]["response"]["body"]["string"]

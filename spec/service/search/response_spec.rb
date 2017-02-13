@@ -10,5 +10,10 @@ describe Crefo::Service::Search::Response do
       company = Crefo::Service::Search::Response::Company.new '10280123456789', 'BE - TestCompany1', 'RINGLAAN 18', '8531', 'HARELBEKE', 'Belgien'
       expect(subject.result).to eq [company]
     end
+
+    it 'returns the result objects' do
+      company = Crefo::Service::Search::Response::Company.new '10280123456789', 'BE - TestCompany1', 'RINGLAAN 18', '8531', 'HARELBEKE', 'Belgien'
+      expect(subject.result).to eq [company]
+    end
   end
 end

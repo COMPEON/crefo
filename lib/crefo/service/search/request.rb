@@ -7,12 +7,8 @@ module Crefo
 
         def body
           {
-            searchtype: 'SETY-1',
-            companyname: 'BE - Testcompany1',
-            postcode: '8531',
-            city: 'Harelbeke',
-            country: 'BE'
-          }
+            searchtype: 'SETY-1'
+          }.merge(options)
         end
       end
     end

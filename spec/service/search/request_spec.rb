@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Crefo::Service::Search::Request, vcr: :search do
+  subject { described_class.new(companyname: "BE - Testcompany1", postcode: "8531", city: "Harelbeke", country: "BE") }
+
   describe '#send' do
     it 'sends the request' do
       expect(subject.send).to be_truthy
