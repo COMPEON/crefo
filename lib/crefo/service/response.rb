@@ -1,6 +1,9 @@
 module Crefo
   class Service
     class Response
+      class ParsingError < StandardError; end
+      class ResponseError < StandardError; end
+
       attr_accessor :response_body
 
       def initialize(response_body = nil)
@@ -17,8 +20,16 @@ module Crefo
 
       def document_hash
         @document_hash ||= begin
-          nori = Nori.new(strip_namespaces: true, convert_tags_to: ->(tag) { tag.to_sym })
-          nori.parse(body)
+          document_hash = begin
+            nori = Nori.new(strip_namespaces: true, convert_tags_to: ->(tag) { tag.to_sym })
+            nori.parse(body)
+          rescue
+            raise ParsingError, body
+          end
+
+          raise ResponseError, Nokogiri::XML(body).to_xml if document_hash[:Envelope][:Body][:Fault]
+
+          document_hash
         end
       end
 
