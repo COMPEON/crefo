@@ -1,6 +1,6 @@
 module Crefo
   class Service
-    class Logon < Crefo::Service
+    class Logon
       class Response < Service::Response
         self.response_name = :logon
 

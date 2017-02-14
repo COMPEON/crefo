@@ -1,6 +1,6 @@
 module Crefo
   class Service
-    class Keylist < Crefo::Service
+    class Keylist
       class Request < Service::Request
         self.request_name = :keylist
         self.response_class = Keylist::Response

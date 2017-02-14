@@ -4,3 +4,6 @@ module Crefo
     end
   end
 end
+
+require 'crefo/service/report/response'
+require 'crefo/service/report/request'

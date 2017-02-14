@@ -4,3 +4,7 @@ module Crefo
     end
   end
 end
+
+require 'crefo/service/search/response'
+require 'crefo/service/search/request'
+require 'crefo/service/search/company'

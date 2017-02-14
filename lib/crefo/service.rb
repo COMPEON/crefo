@@ -1,3 +1,6 @@
+require 'crefo/service/request'
+require 'crefo/service/response'
+
 module Crefo
   class Service
     attr_reader :options

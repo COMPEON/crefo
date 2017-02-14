@@ -4,3 +4,6 @@ module Crefo
     end
   end
 end
+
+require 'crefo/service/keylist/response'
+require 'crefo/service/keylist/request'

@@ -4,3 +4,6 @@ module Crefo
     end
   end
 end
+
+require 'crefo/service/change_password/response'
+require 'crefo/service/change_password/request'
