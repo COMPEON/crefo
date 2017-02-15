@@ -5,7 +5,7 @@ module Crefo
         self.response_name = :report
 
         def result
-          document_body_hash[:reportdata][:solvencyindex][:solvencyindexone].to_i
+          document_body_hash
         end
       end
     end
