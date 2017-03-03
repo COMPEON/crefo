@@ -32,6 +32,10 @@ module Crefo
         end
       end
 
+      def transmissiontimestamp
+        self.class.transmissiontimestamp || Time.now
+      end
+
       private
 
       def user_agent
@@ -45,6 +49,13 @@ module Crefo
       class << self
         attr_accessor :response_class
         attr_accessor :request_name
+        attr_reader :transmissiontimestamp
+
+        def mock_transmissiontimestamp(time = Time.now, &block)
+          @transmissiontimestamp = time
+          block.call
+          @transmissiontimestamp = nil
+        end
       end
     end
   end

@@ -6,7 +6,7 @@ module Crefo
           def build(xml, request)
             nodes = {
               communicationlanguage: Crefo.config.communicationlanguage,
-              transmissiontimestamp: Time.now.iso8601,
+              transmissiontimestamp: request.transmissiontimestamp.iso8601,
               keylistversion: Crefo.config.keylistversion,
               clientapplicationname: Crefo.config.clientapplicationname,
               clientapplicationversion: Crefo.config.clientapplicationversion,

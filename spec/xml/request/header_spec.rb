@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Crefo::XML::Request::Header do
   let(:xml) { Nokogiri::XML::Builder.new }
-  let(:request) { double(:request, request_id: 'asdfghjkl') }
-  let(:time) { Time.now.iso8601 }
+  let(:time) { Time.now }
+  let(:request) { double(:request, request_id: 'asdfghjkl', transmissiontimestamp: time) }
 
   it 'builds the request header', :timecop, :mock_config do
     Crefo::XML::Request::Header.build(xml, request)
