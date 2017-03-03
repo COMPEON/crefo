@@ -7,4 +7,3 @@ end
 
 require 'crefo/service/search/response'
 require 'crefo/service/search/request'
-require 'crefo/service/search/company'
