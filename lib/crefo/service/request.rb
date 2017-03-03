@@ -1,3 +1,5 @@
+require 'securerandom'
+
 module Crefo
   class Service
     class Request
