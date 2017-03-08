@@ -49,12 +49,17 @@ module Crefo
       class << self
         attr_accessor :response_class
         attr_accessor :request_name
-        attr_reader :transmissiontimestamp
+
+        @@transmissiontimestamp = nil
+
+        def transmissiontimestamp
+          @@transmissiontimestamp
+        end
 
         def mock_transmissiontimestamp(time = Time.now, &block)
-          @transmissiontimestamp = time
+          @@transmissiontimestamp = time
           block.call
-          @transmissiontimestamp = nil
+          @@transmissiontimestamp = nil
         end
       end
     end
