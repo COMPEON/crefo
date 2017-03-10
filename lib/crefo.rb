@@ -3,6 +3,7 @@ require 'nori'
 require 'faraday'
 
 require 'crefo/configuration'
+require 'crefo/log'
 require 'crefo/service'
 require 'crefo/service/change_password'
 require 'crefo/service/keylist'

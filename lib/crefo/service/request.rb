@@ -11,11 +11,11 @@ module Crefo
       end
 
       def envelope
-        XML::Request::Envelope.new(request: self).build
+        @envelope ||= XML::Request::Envelope.new(request: self).build
       end
 
-      def send
-        connection.post Crefo.config.endpoint do |reqest|
+      def send(url)
+        connection.post url do |reqest|
           reqest.headers[:content_type] = 'application/xop+xml'
           reqest.body = envelope
         end.body
