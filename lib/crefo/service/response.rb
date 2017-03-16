@@ -7,7 +7,7 @@ module Crefo
       attr_accessor :response_body
 
       def initialize(response_body = nil)
-        @response_body = response_body
+        self.response_body = response_body
       end
 
       def body

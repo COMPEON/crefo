@@ -47,7 +47,7 @@ RSpec.configure do |config|
     VCR.eject_cassette # TODO: fix this hack
 
     options = { match_requests_on: [:body, :headers] }
-    # options.merge!(record: :new_episodes) # use only if implementing new apis
+    options.merge!(record: :new_episodes) # use only if implementing new apis
 
     VCR.use_cassette example.metadata[:vcr], options do |cassette|
       Timecop.freeze(Crefo.test_time) do

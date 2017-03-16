@@ -22,7 +22,7 @@ describe Crefo::Service::Request do
     it 'sends the request to Crefo and returns the response' do
       expect(response).to receive(:body).and_return(response_xml)
       expect(subject.connection).to receive(:post).and_return(response)
-      expect(subject.send).to eq response_xml
+      expect(subject.send(Crefo.config.endpoint)).to eq response_xml
     end
   end
 

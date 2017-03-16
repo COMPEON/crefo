@@ -5,7 +5,7 @@ describe Crefo::Service::ChangePassword::Request, vcr: :changepassword do
 
   describe '#send' do
     it 'sends the request' do
-      expect(subject.send).to be_truthy
+      expect(subject.send(Crefo.config.endpoint)).to be_truthy
     end
   end
 

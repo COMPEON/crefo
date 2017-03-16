@@ -16,7 +16,7 @@ module Crefo
         response_body = request.send(url)
         response = self.class::Response.new(response_body)
         result = response.result
-      rescue Crefo::Response::ResponseError => exception
+      rescue Crefo::Service::Response::ResponseError => exception
         error = true
       rescue Exception => exception
         error = %(#{exception.class}: #{exception.message}\n#{exception.backtrace.join("\n")})

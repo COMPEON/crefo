@@ -45,11 +45,11 @@ http_interactions:
       connection:
       - close
       date:
-      - Mon, 13 Feb 2017 14:46:11 GMT
+      - Thu, 16 Mar 2017 10:07:23 GMT
       transfer-encoding:
       - chunked
       content-type:
-      - Multipart/Related; boundary="----=_Part_663975_1699528041.1486997171737";
+      - Multipart/Related; boundary="----=_Part_249022_1053798368.1489658843769";
         type="application/xop+xml"; start-info="application/soap+xml"
       accept:
       - application/soap+xml, text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
@@ -63,10 +63,10 @@ http_interactions:
       - "*"
     body:
       encoding: ASCII-8BIT
-      string: "------=_Part_663975_1699528041.1486997171737\r\nContent-Type: application/xop+xml;
+      string: "------=_Part_249022_1053798368.1489658843769\r\nContent-Type: application/xop+xml;
         charset=utf-8; type=\"application/soap+xml\"\r\n\r\n<env:Envelope xmlns:env=\"http://www.w3.org/2003/05/soap-envelope\"><env:Header/><env:Body><ns2:searchResponse
-        xmlns:ns2=\"https://onlineservice.creditreform.de/webservice/0600-0021\"><ns2:header><ns2:communicationlanguage>de</ns2:communicationlanguage><ns2:transmissiontimestamp>2017-02-13T15:46:11.706+01:00</ns2:transmissiontimestamp><ns2:keylistversion>21</ns2:keylistversion><ns2:clientapplicationname>{CREFO_CLIENTAPPLICATIONNAME}</ns2:clientapplicationname><ns2:clientapplicationversion>0</ns2:clientapplicationversion><ns2:transactionreference>de5e81bef7d2f81f412a1ab17</ns2:transactionreference><ns2:useraccount>{CREFO_USERACCOUNT}</ns2:useraccount><ns2:responseid>05241f3a-24e9-4239-9258-5814c3f8a892</ns2:responseid></ns2:header><ns2:body><ns2:hit><ns2:identificationnumber>10280123456789</ns2:identificationnumber><ns2:companyname>BE
-        - TestCompany1</ns2:companyname><ns2:street>RINGLAAN 18</ns2:street><ns2:postcode>8531</ns2:postcode><ns2:city>HARELBEKE</ns2:city><ns2:country><ns2:key>BE</ns2:key><ns2:designation>Belgien</ns2:designation></ns2:country></ns2:hit><ns2:morehits>false</ns2:morehits></ns2:body></ns2:searchResponse></env:Body></env:Envelope>\r\n------=_Part_663975_1699528041.1486997171737--"
+        xmlns:ns2=\"https://onlineservice.creditreform.de/webservice/0600-0021\"><ns2:header><ns2:communicationlanguage>de</ns2:communicationlanguage><ns2:transmissiontimestamp>2017-03-16T11:07:23.738+01:00</ns2:transmissiontimestamp><ns2:keylistversion>21</ns2:keylistversion><ns2:clientapplicationname>{CREFO_CLIENTAPPLICATIONNAME}</ns2:clientapplicationname><ns2:clientapplicationversion>0</ns2:clientapplicationversion><ns2:transactionreference>de5e81bef7d2f81f412a1ab17</ns2:transactionreference><ns2:useraccount>{CREFO_USERACCOUNT}</ns2:useraccount><ns2:responseid>b27a0b61-ae6b-4f43-b3c6-335a89dbbc36</ns2:responseid></ns2:header><ns2:body><ns2:hit><ns2:identificationnumber>10280123456789</ns2:identificationnumber><ns2:companyname>BE
+        - TestCompany1</ns2:companyname><ns2:street>RINGLAAN 18</ns2:street><ns2:postcode>8531</ns2:postcode><ns2:city>HARELBEKE</ns2:city><ns2:country><ns2:key>BE</ns2:key><ns2:designation>Belgien</ns2:designation></ns2:country></ns2:hit><ns2:morehits>false</ns2:morehits></ns2:body></ns2:searchResponse></env:Body></env:Envelope>\r\n------=_Part_249022_1053798368.1489658843769--"
     http_version: 
   recorded_at: Sat, 20 Dec 2014 03:44:44 GMT
 - request:
@@ -113,12 +113,12 @@ http_interactions:
       connection:
       - close
       date:
-      - Mon, 13 Feb 2017 14:54:18 GMT
+      - Thu, 16 Mar 2017 10:07:23 GMT
       transfer-encoding:
       - chunked
       content-type:
-      - Multipart/Related; boundary="----=_Part_664041_1965906913.1486997658734";
-        type="application/xop+xml"; start-info="application/soap+xml"
+      - Multipart/Related; boundary="----=_Part_249023_542636179.1489658844095"; type="application/xop+xml";
+        start-info="application/soap+xml"
       accept:
       - application/soap+xml, text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
       soapaction:
@@ -131,12 +131,12 @@ http_interactions:
       - "*"
     body:
       encoding: ASCII-8BIT
-      string: "------=_Part_664041_1965906913.1486997658734\r\nContent-Type: application/xop+xml;
+      string: "------=_Part_249023_542636179.1489658844095\r\nContent-Type: application/xop+xml;
         charset=utf-8; type=\"application/soap+xml\"\r\n\r\n<env:Envelope xmlns:env=\"http://www.w3.org/2003/05/soap-envelope\"><env:Header/><env:Body><ns2:searchResponse
-        xmlns:ns2=\"https://onlineservice.creditreform.de/webservice/0600-0021\"><ns2:header><ns2:communicationlanguage>de</ns2:communicationlanguage><ns2:transmissiontimestamp>2017-02-13T15:54:18.706+01:00</ns2:transmissiontimestamp><ns2:keylistversion>21</ns2:keylistversion><ns2:clientapplicationname>{CREFO_CLIENTAPPLICATIONNAME}</ns2:clientapplicationname><ns2:clientapplicationversion>0</ns2:clientapplicationversion><ns2:transactionreference>de5e81bef7d2f81f412a1ab17</ns2:transactionreference><ns2:useraccount>{CREFO_USERACCOUNT}</ns2:useraccount><ns2:responseid>cba9b746-e327-47e0-871d-5edd94fe0d45</ns2:responseid></ns2:header><ns2:body><ns2:hit><ns2:identificationnumber>1011211311411</ns2:identificationnumber><ns2:companyname>FR
+        xmlns:ns2=\"https://onlineservice.creditreform.de/webservice/0600-0021\"><ns2:header><ns2:communicationlanguage>de</ns2:communicationlanguage><ns2:transmissiontimestamp>2017-03-16T11:07:24.023+01:00</ns2:transmissiontimestamp><ns2:keylistversion>21</ns2:keylistversion><ns2:clientapplicationname>{CREFO_CLIENTAPPLICATIONNAME}</ns2:clientapplicationname><ns2:clientapplicationversion>0</ns2:clientapplicationversion><ns2:transactionreference>de5e81bef7d2f81f412a1ab17</ns2:transactionreference><ns2:useraccount>{CREFO_USERACCOUNT}</ns2:useraccount><ns2:responseid>2dcecb0c-3e26-4225-bc84-dec3ddbb5bd5</ns2:responseid></ns2:header><ns2:body><ns2:hit><ns2:identificationnumber>1011211311411</ns2:identificationnumber><ns2:companyname>FR
         - TESTCOMPANY101</ns2:companyname><ns2:street>74 RUE DE REIMS</ns2:street><ns2:postcode>75007</ns2:postcode><ns2:city>PARIS</ns2:city><ns2:country><ns2:key>FR</ns2:key><ns2:designation>Frankreich</ns2:designation></ns2:country></ns2:hit><ns2:hit><ns2:identificationnumber>1011211311412</ns2:identificationnumber><ns2:companyname>FR
         - TESTCOMPANY1</ns2:companyname><ns2:street>10 PLACE GEORGES POMPIDOU</ns2:street><ns2:postcode>75004
-        </ns2:postcode><ns2:city>PARIS</ns2:city><ns2:country><ns2:key>FR</ns2:key><ns2:designation>Frankreich</ns2:designation></ns2:country></ns2:hit><ns2:morehits>false</ns2:morehits></ns2:body></ns2:searchResponse></env:Body></env:Envelope>\r\n------=_Part_664041_1965906913.1486997658734--"
+        </ns2:postcode><ns2:city>PARIS</ns2:city><ns2:country><ns2:key>FR</ns2:key><ns2:designation>Frankreich</ns2:designation></ns2:country></ns2:hit><ns2:morehits>false</ns2:morehits></ns2:body></ns2:searchResponse></env:Body></env:Envelope>\r\n------=_Part_249023_542636179.1489658844095--"
     http_version: 
   recorded_at: Sat, 20 Dec 2014 03:44:44 GMT
 recorded_with: VCR 3.0.3
