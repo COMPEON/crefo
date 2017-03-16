@@ -16,7 +16,7 @@ describe Crefo::Service::Report, vcr: :report do
 
     describe '#process' do
       it 'sends the request and returns a response result' do
-        result = subject.process
+        result = subject.process.result
         expect(result).to include(
           producttype: hash_including(
             designation: 'Ampelauskunft'
@@ -40,7 +40,7 @@ describe Crefo::Service::Report, vcr: :report do
 
     describe '#process' do
       it 'sends the request and returns a response result' do
-        result = subject.process
+        result = subject.process.result
         expect(result).to include(
           producttype: hash_including(
             designation: 'Kompaktauskunft'

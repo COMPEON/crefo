@@ -13,15 +13,16 @@ describe Crefo::Service do
   end
 
   describe '#process' do
-    let(:response_body) { double(:response_body) }
+    let(:response) { double(:response, body: '', headers: {}) }
     let(:result) { double(:result) }
 
     it 'sends the request and returns a response result' do
       expect(described_class::Request).to receive(:new).with(options).and_call_original
-      expect_any_instance_of(described_class::Request).to receive(:send).and_return(response_body)
-      expect_any_instance_of(described_class::Response).to receive(:response_body=).with(response_body)
+      expect_any_instance_of(described_class::Request).to receive(:send).and_return(response)
       expect_any_instance_of(described_class::Response).to receive(:result).and_return(result)
-      expect(subject.process).to eq result
+
+      result_object = subject.process
+      expect(result_object.result).to eq result
     end
   end
 end

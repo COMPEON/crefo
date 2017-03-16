@@ -1,6 +1,7 @@
+require 'faraday'
+require 'mail'
 require 'nokogiri'
 require 'nori'
-require 'faraday'
 
 require 'crefo/configuration'
 require 'crefo/log'

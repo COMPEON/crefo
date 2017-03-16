@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Crefo::Service::Search::Response do
-  let(:response_body) { vcr_reponse_body(:search) }
+  let(:response_body) { fake_response_form_vcr(:search) }
 
   subject { described_class.new(response_body) }
 

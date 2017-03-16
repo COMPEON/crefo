@@ -5,7 +5,7 @@ describe Crefo::Service::Logon, vcr: :logon do
 
   describe '#process' do
     it 'sends the request and returns a response result' do
-      expect(subject.process).to have_key :currentkeylistversion
+      expect(subject.process.result).to have_key :currentkeylistversion
     end
   end
 end

@@ -5,7 +5,7 @@ describe Crefo::Service::ChangePassword do
 
   describe '#process', vcr: :changepassword do
     it 'sends the request and returns a response result' do
-      expect(subject.process).to eq true
+      expect(subject.process.result).to eq true
     end
   end
 end

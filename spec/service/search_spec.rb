@@ -8,7 +8,7 @@ describe Crefo::Service::Search, vcr: :search do
       let(:args) { { companyname: "BE - Testcompany1", postcode: "8531", city: "Harelbeke", country: "BE" } }
 
       it 'sends the request and returns a response result' do
-        expect(subject.process).to eq [
+        expect(subject.process.result).to eq [
           {
             identificationnumber: '10280123456789',
             companyname: 'BE - TestCompany1',
@@ -26,7 +26,7 @@ describe Crefo::Service::Search, vcr: :search do
       let(:args) { { companyname: 'FR - TestCompany1', postcode: '75004', country: 'FR' } }
 
       it 'sends the request and returns a response result' do
-        expect(subject.process).to eq [
+        expect(subject.process.result).to eq [
           {
             identificationnumber: '1011211311411',
             companyname: 'FR - TESTCOMPANY101',

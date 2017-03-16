@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Crefo::Service::ChangePassword::Response do
-  let(:response_body) { vcr_reponse_body(:changepassword) }
+  let(:response_body) { fake_response_form_vcr(:changepassword) }
 
   subject { described_class.new(response_body) }
 

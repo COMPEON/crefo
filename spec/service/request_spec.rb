@@ -17,12 +17,11 @@ describe Crefo::Service::Request do
 
   describe '#send' do
     let(:response) { double(:response) }
-    let(:response_xml) { double(:response_xml) }
+    let(:url) { Crefo.config.endpoint }
 
     it 'sends the request to Crefo and returns the response' do
-      expect(response).to receive(:body).and_return(response_xml)
-      expect(subject.connection).to receive(:post).and_return(response)
-      expect(subject.send(Crefo.config.endpoint)).to eq response_xml
+      expect(subject.connection).to receive(:post).with(url).and_return(response)
+      expect(subject.send(url)).to eq response
     end
   end
 

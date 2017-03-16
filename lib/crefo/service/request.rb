@@ -18,7 +18,7 @@ module Crefo
         connection.post url do |reqest|
           reqest.headers[:content_type] = 'application/xop+xml'
           reqest.body = envelope
-        end.body
+        end
       end
 
       def connection
