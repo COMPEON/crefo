@@ -5,11 +5,7 @@ module Crefo
         self.response_name = :search
 
         def result
-          hits.each do |hit|
-            country = hit.delete(:country)
-            hit[:country] = country[:designation]
-            hit[:country_iso] = country[:key]
-          end
+          hits
         end
 
         # ensure that the result is always a array
