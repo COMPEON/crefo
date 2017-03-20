@@ -4,36 +4,26 @@ module Crefo
       class ParsingError < StandardError; end
       class ResponseError < StandardError; end
 
-      attr_reader :body, :attachments
+      attr_reader :body, :attachments, :document_hash
 
       def initialize(response)
         @response = response
         @body = ''
         @raw_attachments = []
         parse_body
-      end
-
-      def document_hash
-        @document_hash ||= begin
-          document_hash = begin
-            nori = Nori.new(strip_namespaces: true, convert_tags_to: ->(tag) { tag.to_sym })
-            nori.parse(body)
-          rescue
-            raise ParsingError, body
-          end
-
-          raise ResponseError, Nokogiri::XML(body).to_xml if document_hash[:Envelope][:Body][:Fault]
-
-          document_hash
-        end
+        parse_document
       end
 
       def document_body_hash
-        document_reponse_hash[:body]
+        document_reponse_hash[:body] rescue binding.pry
       end
 
       def document_reponse_hash
         document_hash[:Envelope][:Body][:"#{self.class.response_name}Response"]
+      end
+
+      def document_fault_hash
+        document_hash[:Envelope][:Body][:Fault]
       end
 
       def response_id
@@ -47,6 +37,21 @@ module Crefo
       end
 
       private
+
+      def parse_document
+        @document_hash = begin
+          nori = Nori.new(strip_namespaces: true, convert_tags_to: ->(tag) { tag.to_sym })
+          nori.parse(body)
+        rescue
+          raise ParsingError, body
+        end
+
+        raise ResponseError, Nokogiri::XML(body).to_xml if error?
+      end
+
+      def error?
+        document_fault_hash
+      end
 
       def multipart?
         !(@response.headers['content-type'] =~ /^multipart/im).nil?
