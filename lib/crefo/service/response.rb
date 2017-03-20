@@ -15,7 +15,7 @@ module Crefo
       end
 
       def document_body_hash
-        document_reponse_hash[:body] rescue binding.pry
+        document_reponse_hash[:body]
       end
 
       def document_reponse_hash
