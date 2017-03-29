@@ -9,7 +9,7 @@ module Crefo
       def initialize(response)
         @response = response
         @body = ''
-        @raw_attachments = []
+        @attachments = []
         parse_body
         parse_document
       end
@@ -28,12 +28,6 @@ module Crefo
 
       def response_id
         document_reponse_hash[:header][:responseid]
-      end
-
-      def attachments
-        @attachments ||= @raw_attachments.map do |raw_attachment|
-          Attachment.from_raw_attachment(raw_attachment)
-        end
       end
 
       private
@@ -64,12 +58,18 @@ module Crefo
 
       def parse_body
         if multipart?
-          parts = Mail::Part.new(
-            headers: @response.headers,
-            body: @response.body
-          ).body.split!(boundary).parts
-          @body = parts[0].body.to_s
-          @raw_attachments = parts[1..-1]
+          body = @response.body
+          body.force_encoding(Encoding::BINARY)
+          body.encode(Encoding::ASCII_8BIT, universal_newline: true)
+
+          parts = body.split(/(?:\A|\r\n)(?:--#{boundary}?(?:--)?)(?=\s*$)/)
+          parts = parts.map do |part|
+            part.gsub(/((\r\n)?Content-.*\r\n(\r\n)?)/, '')
+          end
+          parts.shift
+
+          @body = parts[0]
+          @attachments = parts[1..-1]
         else
           @body = @response.body
         end
@@ -82,28 +82,6 @@ module Crefo
 
         def response_name=(response_name)
           @response_name = response_name
-        end
-      end
-
-      class Attachment
-        attr_reader :type, :encoding, :id, :data
-
-        def initialize(type, encoding, id, data)
-          @type = type
-          @encoding = encoding
-          @id = id
-          @data = data
-        end
-
-        class << self
-          def from_raw_attachment(raw_attachment)
-            content_type = raw_attachment.header[:content_type]
-            type = content_type.sub_type || content_type.main_type
-            encoding = raw_attachment.header[:content_transfer_encoding].value
-            id = raw_attachment.header[:content_id].value
-            data = raw_attachment.body.to_s
-            new(type, encoding, id, data)
-          end
         end
       end
     end

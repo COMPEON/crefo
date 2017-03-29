@@ -46,10 +46,7 @@ describe Crefo::Service::Response do
         expect(attachments).to be_instance_of(Array)
 
         attachment = attachments.first
-        expect(attachment.type).to eq 'pdf'
-        expect(attachment.encoding).to eq 'binary'
-        expect(attachment.id).to eq '<399cc1da-68b9-4f34-a676-cf582273bf7c@onlineservice.creditreform.de>'
-        expect(attachment.data).to_not eq nil
+        expect(attachment).to_not eq nil
       end
     end
 
