@@ -60,7 +60,6 @@ module Crefo
         if multipart?
           body = @response.body
           body.force_encoding(Encoding::BINARY)
-          body.encode(Encoding::ASCII_8BIT, universal_newline: true)
 
           parts = body.split(/(?:\A|\r\n)(?:--#{boundary}?(?:--)?)(?=\s*$)/)
           parts = parts.map do |part|
