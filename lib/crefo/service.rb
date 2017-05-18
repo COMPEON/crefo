@@ -20,15 +20,15 @@ module Crefo
       rescue Exception => exception
         error = %(#{exception.class}: #{exception.message}\n#{exception.backtrace.join("\n")})
         raise exception
-      ensure
-        Crefo::Log.new(url, (request && request.envelope), (response && response.body), error)
-        Result.new(
-          result: (response && response.result),
-          body: (response && response.body),
-          attachments: (response && response.attachments),
-          error: error
-        )
       end
+      
+      Crefo::Log.new(url, (request && request.envelope), (response && response.body), error)
+      Result.new(
+        result: (response && response.result),
+        body: (response && response.body),
+        attachments: (response && response.attachments),
+        error: error
+      )
     end
 
     class Result
