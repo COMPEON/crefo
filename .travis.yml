@@ -2,11 +2,11 @@ sudo: false
 language: ruby
 cache: bundler
 rvm:
-  - 2.0.0-p648
-  - 2.1.10
-  - 2.3.3
-  - 2.4.0
-before_install: gem install bundler -v 1.14.3
+  - 2.3
+  - 2.4
+  - 2.5
+  - 2.6
+before_install: gem install bundler
 before_script: cp .env.sample .env
 notifications:
   email: false
