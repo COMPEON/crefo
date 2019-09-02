@@ -23,7 +23,7 @@ module Crefo
 
         def report_not_available?
           return false unless document_fault_hash
-          'ER-114' == document_fault_hash[:Detail][:servicefault][:body][:fault][:errorkey][:key]
+          'ER-114' == document_fault_hash&.dig(:Detail, :servicefault, :body, :fault, :errorkey, :key)
         end
       end
     end
