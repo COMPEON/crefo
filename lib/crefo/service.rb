@@ -12,7 +12,7 @@ module Crefo
     def process
       begin
         url = Crefo.config.endpoint
-        request = self.class::Request.new(options)
+        request = self.class::Request.new(**options)
         response_data = request.send(url)
         response = self.class::Response.new(response_data)
       rescue Crefo::Service::Response::ResponseError => exception
