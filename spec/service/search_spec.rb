@@ -15,8 +15,10 @@ describe Crefo::Service::Search, vcr: :search do
             street: 'RINGLAAN 18',
             postcode: '8531',
             city: 'HARELBEKE',
-            country: 'Belgien',
-            country_iso: 'BE'
+            country: {
+              designation: 'Belgien',
+              key: 'BE'
+            }
           }
         ]
       end
@@ -33,8 +35,10 @@ describe Crefo::Service::Search, vcr: :search do
             street: '74 RUE DE REIMS',
             postcode: '75007',
             city: 'PARIS',
-            country: 'Frankreich',
-            country_iso: 'FR'
+            country: {
+              designation: 'Frankreich',
+              key: 'FR'
+            }
           },
           {
             identificationnumber: '1011211311412',
@@ -42,8 +46,10 @@ describe Crefo::Service::Search, vcr: :search do
             street: '10 PLACE GEORGES POMPIDOU',
             postcode: '75004 ',
             city: 'PARIS',
-            country: 'Frankreich',
-            country_iso: 'FR'
+            country: {
+              designation: 'Frankreich',
+              key: 'FR'
+            }
           }
         ]
       end
