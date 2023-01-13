@@ -19,3 +19,8 @@ jobs:
         bundler-cache: true
     - name: Run tests
       run: bundle exec rake
+      env:
+        CREFO_USERACCOUNT: ${{ secrets.CREFO_USERACCOUNT }}
+        CREFO_GENERALPASSWORD: ${{ secrets.CREFO_GENERALPASSWORD }}
+        CREFO_INDIVIDUALPASSWORD: ${{ secrets.CREFO_INDIVIDUALPASSWORD }}
+        CREFO_CLIENTAPPLICATIONNAME: ${{ secrets.CREFO_CLIENTAPPLICATIONNAME }}
