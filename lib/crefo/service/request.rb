@@ -1,4 +1,5 @@
 require 'securerandom'
+require 'faraday/multipart'
 
 module Crefo
   class Service
