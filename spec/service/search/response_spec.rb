@@ -14,8 +14,10 @@ describe Crefo::Service::Search::Response do
           street: 'RINGLAAN 18',
           postcode: '8531',
           city: 'HARELBEKE',
-          country: 'Belgien',
-          country_iso: 'BE'
+          country: {
+            designation: 'Belgien',
+            key: 'BE'
+          }
         }
       ]
     end
