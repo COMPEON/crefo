@@ -23,7 +23,7 @@ module Crefo
       end
 
       def document_fault_hash
-        document_hash[:Envelope][:Body][:Fault]
+        document_hash.dig(:Envelope, :Body, :Fault)
       end
 
       def response_id
