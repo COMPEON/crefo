@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'Ruby client for the Creditreform API.'
   spec.homepage      = 'https://github.com/COMPEON/crefo'
 
-  spec.required_ruby_version = '>= 3.0.5'
+  spec.required_ruby_version = '>= 2.7.7'
 
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
