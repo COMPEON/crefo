@@ -2,8 +2,8 @@ module Crefo
   class Configuration
     CURRENT_KEYLISTVERSION = 21
     ENDPOINTS = {
-      default: 'https://onlineservice.creditreform.de:443/webservice/0600-0021/soap12/messages.wsdl',
-      test: 'https://ktu.onlineservice.creditreform.de:443/webservice/0600-0021/soap12/messages.wsdl'
+      default: 'https://onlineservice.creditreform.de:443/webservice/0710-0033/soap12/messages.wsdl',
+      test: 'https://ktu.onlineservice.creditreform.de:443/webservice/0710-0033/soap12/messages.wsdl'
     }.freeze
 
     attr_accessor :communicationlanguage, :keylistversion, :transactionreference
