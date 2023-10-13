@@ -7,6 +7,7 @@ module Crefo
 
         def body
           {
+            pagereference: options[:pagereference] || 0,
             openorders: options[:openorders] || false,
             entriesread: options[:entriesread] || false,
             entriesunread: options[:entriesunread] || true,
@@ -15,6 +16,7 @@ module Crefo
             deliverytypestatusreply: options[:deliverytypestatusreply] || true,
             deliverytypesupplement: options[:deliverytypesupplement] || true,
             deliverytypestockdelivery: options[:deliverytypestockdelivery] || true,
+            numberofentries: options[:numberofentries] || 50
           }.merge(options)
         end
       end
