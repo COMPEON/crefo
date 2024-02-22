@@ -36,7 +36,7 @@ describe Crefo::Configuration do
     end
 
     it 'stores all configured data' do
-      expect(config.endpoint).to eq 'https://ktu.onlineservice.creditreform.de:443/webservice/0600-0021/soap12/messages.wsdl'
+      expect(config.endpoint).to eq 'https://ktu.onlineservice.creditreform.de:443/webservice/0710-0033/soap12/messages.wsdl'
       expect(config.communicationlanguage).to eq 'en'
       expect(config.keylistversion).to eq 22
       expect(config.transactionreference).to eq 'TEST'
@@ -49,8 +49,8 @@ describe Crefo::Configuration do
     end
 
     [
-      [:default, 'https://onlineservice.creditreform.de:443/webservice/0600-0021/soap12/messages.wsdl'],
-      [:test, 'https://ktu.onlineservice.creditreform.de:443/webservice/0600-0021/soap12/messages.wsdl'],
+      [:default, 'https://onlineservice.creditreform.de:443/webservice/0710-0033/soap12/messages.wsdl'],
+      [:test, 'https://ktu.onlineservice.creditreform.de:443/webservice/0710-0033/soap12/messages.wsdl'],
       ['http://example.com/foo.wdsl', 'http://example.com/foo.wdsl']
     ].each do |key, url|
       context "with #{key} endpoint" do

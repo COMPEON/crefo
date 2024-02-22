@@ -6,6 +6,6 @@ describe Crefo::XML::Request::NAMESPACES do
   end
 
   it 'to have namespace ns' do
-    is_expected.to include('xmlns:ns' => 'https://onlineservice.creditreform.de/webservice/0600-0021')
+    is_expected.to include('xmlns:ns' => 'https://onlineservice.creditreform.de/webservice/0710-0033')
   end
 end
